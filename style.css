@@ -1,0 +1,102 @@
+:root {
+  /* 라이트 모드 색상 */
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --link-color: #000000; /* 기본 검정색 링크 */
+  --border-color: gray;
+}
+
+[data-theme='dark'] {
+  /* 다크 모드 색상 */
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --link-color: #61dafb; /* 다크 모드에서 잘 보이는 하늘색 */
+  --border-color: #444444;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+}
+
+a {
+  color: var(--link-color); /* 변수 적용 */
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 45px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  margin: 0;
+  padding: 20px;
+}
+
+#grid ol {
+  border-right: 1px solid var(--border-color);
+  width: 100px;
+  margin: 0;
+  padding: 20px;
+  padding-left: 33px;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+}
+
+#article {
+  padding-left: 25px;
+}
+
+/* 버튼 스타일 추가 */
+#theme-toggle {
+  display: block;
+  margin: 10px auto;
+  padding: 5px 15px;
+  cursor: pointer;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+}
+
+@media(max-width:800px) {
+  #grid {
+    display: block;
+  }
+  #grid ol {
+    border-right: none;
+  }
+  h1 {
+    border-bottom: none;
+  }
+}
+
+/* 버튼을 감싸는 컨테이너 (하단 중앙 정렬용) */
+.toggle-container {
+  position: fixed;   /* 화면에 고정 */
+  bottom: 20px;      /* 바닥에서 20px 띄움 */
+  left: 50%;         /* 왼쪽에서 50% 지점으로 이동 */
+  transform: translateX(-50%); /* 버튼의 중심을 맞추기 위해 왼쪽으로 50%만큼 다시 이동 */
+  z-index: 1000;     /* 다른 요소들보다 위에 보이게 설정 */
+}
+
+#theme-toggle {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: var(--text-color); /* 테마에 따라 버튼 색상도 반전됨 */
+  color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 25px; /* 둥근 버튼 스타일 */
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 입체감을 위한 그림자 */
+  transition: all 0.3s;
+}
+
+#theme-toggle:hover {
+  opacity: 0.8;
+  transform: scale(1.05); /* 마우스 올렸을 때 살짝 커지는 효과 */
+}

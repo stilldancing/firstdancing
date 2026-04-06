@@ -1,19 +1,40 @@
 <!doctype html>
 <html>
 <head>
+  <title>WEB1</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="colors.js"></script> 
+</head>
   <title>WEB1 - Welcome</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1><a href="index.html">WEB</a></h1>
-  <ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html">JavaScript</a></li>
-  </ol>
-  <h2>WEB</h2>
-  <p>
-    Linux의 GTK 라이브러리를 사용한 오픈 소스 GUI 데스크톱 환경. GNU 프로젝트의 일부였으나 현재는 독립 후 GNOME Foundation(재단)에서 관리한다. GNOME은 GTK를 기반으로 하고 있으며 리눅스 계열에서 가장 인기 있는 데스크톱 환경이다. Qt 기반의 데스크톱 환경인 KDE와는 기저에 깔린 철학부터가 다르다. KDE 쪽은 C++/Qt 기반으로 Qt의 상업용 라이선스가 없다면 앱 소스코드를 공개해야 한다. GTK 앱들은 LGPL이기 때문에 앱 소스코드 공개도 불필요하다. GNOME의 경우 심플하면서도 유연한 기능을 제공하는 것이 목적이다. 탑 바, 현재 활동(Activities) 오버뷰, 대시(Dash), 애플리케이션 브라우저, 워크스페이스(Workspace) 등이 기본 구성요소이다. Ubuntu, Fedora, Debian, openSUSE, Red Hat Enterprise Linux, CentOS, Rocky Linux, Oracle Linux 등 메이저 리눅스 배포자가 기본 데스크톱 환경으로 채택하고 있다.
-  </p>
+  <h1><a href="index.html">WEB</a></h1>
+    <div id="grid">
+    <ol>
+      <li><a href="1.html">HTML</a></li>
+      <li><a href="2.html">CSS</a></li>
+      <li><a href="3.html">JavaScript</a></li>
+    </ol>
+    <div id="article">
+      <h2>WEB</h2>
+      <p>
+        The Web (short for World Wide Web) is a hypertext-based global information system...
+      </p>
+     </div>
+  </div>
+<div class="toggle-container">
+    <input id="theme-toggle" type="button" value="night" onclick="themeToggle()">
+  </div>
+
+  <script>
+    // 페이지 로드 후 버튼 글자 동기화
+    if(document.documentElement.getAttribute('data-theme') === 'dark'){
+      document.getElementById('theme-toggle').value = 'day';
+    }
+  </script>
+</div>
 </body>
 </html>
